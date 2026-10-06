@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Laboratório de Senhas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="lab">
+
+        <h1>Laboratório de senhas</h1>
+
+        <section class="machine">
+
+            <!-- TUBOS -->
+            <div class="pipe pipe-left"></div>
+            <div class="pipe pipe-right"></div>
+
+            <div class="pipe-bottom-left"></div>
+            <div class="pipe-bottom-right"></div>
+
+
+            <!-- TAMANHO -->
+            <section class="control-box size-box">
+
+                <h2>Tamanho</h2>
+
+                <div class="selected-length">
+                    <span id="lengthValue">8</span>
+                    <span>caracteres</span>
+                </div>
+
+                <div class="range-wrap">
+
+                    <input
+                        id="length"
+                        type="range"
+                        min="6"
+                        max="12"
+                        value="8"
+                    >
+
+                </div>
+
+                <div class="range-labels">
+                    <span>6</span>
+                    <span>12</span>
+                </div>
+
+            </section>
+
+
+            <!-- INGREDIENTES -->
+            <section class="control-box ingredients-box">
+
+                <h2>Ingredientes</h2>
+
+                <label>
+                    <input type="checkbox" id="lowercase" checked>
+                    <span class="fake-check"></span>
+                    minúsculas
+                </label>
+
+                <label>
+                    <input type="checkbox" id="uppercase" checked>
+                    <span class="fake-check"></span>
+                    maiúsculas
+                </label>
+
+                <label>
+                    <input type="checkbox" id="numbers" checked>
+                    <span class="fake-check"></span>
+                    números
+                </label>
+
+                <label>
+                    <input type="checkbox" id="symbols" checked>
+                    <span class="fake-check"></span>
+                    símbolos
+                </label>
+
+            </section>
+
+
+            <!-- AMBIGUIDADE -->
+            <section class="control-box ambiguity-box">
+
+                <h2>Ambiguidade</h2>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="ambiguity"
+                        checked
+                    >
+
+                    <span class="slider">
+                        <span></span>
+                    </span>
+
+                </label>
+
+                <p id="ambiguityText">
+                    permitida
+                </p>
+
+            </section>
+
+
+            <!-- CÂMARA -->
+            <section class="chamber">
+
+                <div class="scanner"></div>
+
+                <div
+                    class="particles"
+                    id="particles"
+                ></div>
+
+                <div
+                    class="password"
+                    id="password"
+                    title="Clique para gerar outra senha"
+                >
+                    Gerando...
+                </div>
+
+                <button
+                    class="copy-btn"
+                    id="copyBtn"
+                    type="button"
+                >
+
+                    <span class="bolt">⚡</span>
+
+                    <span id="copyText">
+                        copiar
+                    </span>
+
+                </button>
+
+            </section>
+
+
+            <!-- STATUS -->
+            <div
+                class="status"
+                id="status"
+            >
+                voltagem de segurança
+            </div>
+
+
+            <!-- FORÇA -->
+            <div class="strength">
+
+                <div class="strength-bar">
+
+                    <span class="segment weak"></span>
+
+                    <span class="segment medium"></span>
+
+                    <span class="segment strong"></span>
+
+                    <div
+                        class="strength-indicator"
+                        id="strengthIndicator"
+                    ></div>
+
+                </div>
+
+                <div class="strength-labels">
+
+                    <span>Fraco</span>
+
+                    <span>Média</span>
+
+                    <span>Forte</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÃO -->
+            <button
+                class="generate-btn"
+                id="generateBtn"
+                type="button"
+            >
+                ⚗ GERAR NOVA SENHA
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <div
+        class="toast"
+        id="toast"
+    >
+        Senha copiada!
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

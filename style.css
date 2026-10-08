@@ -52,12 +52,15 @@ h1 {
 /* MÁQUINA */
 .machine {
     position: relative;
-    width: 100%;
-    max-width: 1100px;
-    min-height: 500px;
+    width: 706px;
+    height: 500px;
     margin: 0 auto;
-    overflow: hidden;
-    background: var(--cream);
+    overflow: visible;
+    background: transparent;
+
+    /* AUMENTA TODA A MÁQUINA */
+    transform: scale(1.35);
+    transform-origin: top center;
 }
 
 /* CAIXAS DE CONTROLE */
@@ -189,7 +192,7 @@ h1 {
     width: 156px;
 }
 
-/* INTERRUPTOR DE AMBIGUIDADE */
+/* INTERRUPTOR */
 .switch {
     display: block;
     width: 80px;
@@ -665,7 +668,10 @@ h1 {
     }
 }
 
-/* RESPONSIVIDADE */
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
 @media (max-width: 720px) {
 
     .lab {
@@ -677,8 +683,13 @@ h1 {
     }
 
     .machine {
-        min-height: 500px;
+        width: 100%;
         max-width: 706px;
+        min-height: 500px;
+        height: 500px;
+
+        /* DESLIGA O AUMENTO NO CELULAR */
+        transform: none;
     }
 
     .size-box {
@@ -746,7 +757,10 @@ h1 {
     }
 }
 
-/* TELAS MUITO PEQUENAS */
+/* =========================================================
+   TELAS MUITO PEQUENAS
+   ========================================================= */
+
 @media (max-width: 430px) {
 
     .lab {
@@ -760,6 +774,7 @@ h1 {
 
     .machine {
         min-height: 520px;
+        height: 520px;
     }
 
     .control-box h2 {

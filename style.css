@@ -14,37 +14,34 @@
 }
 
 /* CORPO */
+html,
 body {
+    width: 100%;
+    min-height: 100%;
     margin: 0;
+}
+
+body {
     min-height: 100vh;
-    display: grid;
-    place-items: center;
-    background: #f7f7f7;
+    background: var(--cream);
     font-family: Arial, Helvetica, sans-serif;
     color: #061b10;
 }
 
 /* ÁREA PRINCIPAL */
 .lab {
-    width: min(100%, 760px);
-    padding: 24px 10px;
-}
-
-.machine {
     position: relative;
-    width: 706px;
-    max-width: 100%;
-    min-height: 500px;
-    margin: auto;
-    overflow: hidden;
-    background: var(--cream);
-    padding-top: 20px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px 10px 30px;
+    overflow-x: hidden;
 }
 
 /* TÍTULO */
 h1 {
     position: relative;
     z-index: 3;
+    width: 100%;
     margin: 0 0 38px;
     text-align: center;
     font-size: clamp(32px, 5vw, 39px);
@@ -52,10 +49,21 @@ h1 {
     font-weight: 700;
 }
 
+/* MÁQUINA */
+.machine {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: var(--cream);
+}
+
 /* CAIXAS DE CONTROLE */
 .control-box {
     position: absolute;
-    top: 101px;
+    top: 20px;
     height: 115px;
     background: var(--green);
     color: white;
@@ -71,7 +79,7 @@ h1 {
 
 /* CAIXA TAMANHO */
 .size-box {
-    left: 22px;
+    left: calc(50% - 353px + 22px);
     width: 220px;
 }
 
@@ -99,7 +107,13 @@ h1 {
     width: 98px;
     height: 6px;
     appearance: none;
-    background: linear-gradient(to right, #ddd 0%, #ddd 33%, #542525 33%, #542525 100%);
+    background: linear-gradient(
+        to right,
+        #ddd 0%,
+        #ddd 33%,
+        #542525 33%,
+        #542525 100%
+    );
     border-radius: 0;
     cursor: pointer;
 }
@@ -133,7 +147,7 @@ h1 {
 
 /* INGREDIENTES */
 .ingredients-box {
-    left: 270px;
+    left: calc(50% - 353px + 270px);
     width: 156px;
 }
 
@@ -170,7 +184,8 @@ h1 {
 
 /* CAIXA DE AMBIGUIDADE */
 .ambiguity-box {
-    right: 38px;
+    left: calc(50% - 353px + 512px);
+    right: auto;
     width: 156px;
 }
 
@@ -225,16 +240,25 @@ h1 {
 .pipe {
     position: absolute;
     z-index: 2;
-    background: linear-gradient(to bottom, #eeeeee, #888888, #d9d9d9, #777777, #e7e7e7);
-    box-shadow: inset 0 0 3px #555555, 0 1px 2px rgba(0, 0, 0, .4);
+    background: linear-gradient(
+        to bottom,
+        #eeeeee,
+        #888888,
+        #d9d9d9,
+        #777777,
+        #e7e7e7
+    );
+    box-shadow:
+        inset 0 0 3px #555555,
+        0 1px 2px rgba(0, 0, 0, .4);
 }
 
 /* TUBO ESQUERDO */
 .pipe-left {
     width: 103px;
     height: 32px;
-    left: 177px;
-    top: 139px;
+    left: calc(50% - 353px + 177px);
+    top: 58px;
 }
 
 .pipe-left::before,
@@ -244,19 +268,29 @@ h1 {
     width: 11px;
     height: 47px;
     top: -8px;
-    background: linear-gradient(to bottom, #eeeeee, #777777, #dddddd);
+    background: linear-gradient(
+        to bottom,
+        #eeeeee,
+        #777777,
+        #dddddd
+    );
     box-shadow: inset 0 0 2px #555555;
 }
 
-.pipe-left::before { left: 0; }
-.pipe-left::after { right: 0; }
+.pipe-left::before {
+    left: 0;
+}
+
+.pipe-left::after {
+    right: 0;
+}
 
 /* TUBO DIREITO */
 .pipe-right {
     width: 103px;
     height: 32px;
-    left: 425px;
-    top: 139px;
+    left: calc(50% - 353px + 425px);
+    top: 58px;
 }
 
 .pipe-right::before,
@@ -266,26 +300,44 @@ h1 {
     width: 11px;
     height: 47px;
     top: -8px;
-    background: linear-gradient(to bottom, #eeeeee, #777777, #dddddd);
+    background: linear-gradient(
+        to bottom,
+        #eeeeee,
+        #777777,
+        #dddddd
+    );
     box-shadow: inset 0 0 2px #555555;
 }
 
-.pipe-right::before { left: 0; }
-.pipe-right::after { right: 0; }
+.pipe-right::before {
+    left: 0;
+}
 
-/* TUBO VERTICAL ESQUERDO (caixa → senha) */
+.pipe-right::after {
+    right: 0;
+}
+
+/* TUBO VERTICAL ESQUERDO */
 .pipe-bottom-left {
     position: absolute;
-    left: 122px;
-    top: 214px;
+    left: calc(50% - 353px + 122px);
+    top: 135px;
     width: 12px;
     height: 87px;
-    background: linear-gradient(to right, #eeeeee 0%, #aaaaaa 25%, #777777 50%, #cccccc 75%, #eeeeee 100%);
-    box-shadow: inset 0 0 3px #555555, 0 1px 2px rgba(0, 0, 0, .35);
+    background: linear-gradient(
+        to right,
+        #eeeeee 0%,
+        #aaaaaa 25%,
+        #777777 50%,
+        #cccccc 75%,
+        #eeeeee 100%
+    );
+    box-shadow:
+        inset 0 0 3px #555555,
+        0 1px 2px rgba(0, 0, 0, .35);
     z-index: 2;
 }
 
-/* Tampa do tubo esquerdo */
 .pipe-bottom-left::before {
     content: "";
     position: absolute;
@@ -293,11 +345,15 @@ h1 {
     top: 0;
     width: 14px;
     height: 8px;
-    background: linear-gradient(to right, #eeeeee, #777777, #dddddd);
+    background: linear-gradient(
+        to right,
+        #eeeeee,
+        #777777,
+        #dddddd
+    );
     box-shadow: inset 0 0 2px #555555;
 }
 
-/* Conexão inferior esquerda */
 .pipe-bottom-left::after {
     content: "";
     position: absolute;
@@ -306,23 +362,36 @@ h1 {
     width: 14px;
     height: 10px;
     border-radius: 0 0 8px 8px;
-    background: linear-gradient(to right, #eeeeee, #777777, #dddddd);
+    background: linear-gradient(
+        to right,
+        #eeeeee,
+        #777777,
+        #dddddd
+    );
     box-shadow: inset 0 0 2px #555555;
 }
 
-/* TUBO VERTICAL DIREITO (caixa → senha) */
+/* TUBO VERTICAL DIREITO */
 .pipe-bottom-right {
     position: absolute;
-    right: 122px;
-    top: 214px;
+    left: calc(50% - 353px + 572px);
+    top: 135px;
     width: 12px;
     height: 87px;
-    background: linear-gradient(to right, #eeeeee 0%, #aaaaaa 25%, #777777 50%, #cccccc 75%, #eeeeee 100%);
-    box-shadow: inset 0 0 3px #555555, 0 1px 2px rgba(0, 0, 0, .35);
+    background: linear-gradient(
+        to right,
+        #eeeeee 0%,
+        #aaaaaa 25%,
+        #777777 50%,
+        #cccccc 75%,
+        #eeeeee 100%
+    );
+    box-shadow:
+        inset 0 0 3px #555555,
+        0 1px 2px rgba(0, 0, 0, .35);
     z-index: 2;
 }
 
-/* Tampa do tubo direito */
 .pipe-bottom-right::before {
     content: "";
     position: absolute;
@@ -330,11 +399,15 @@ h1 {
     top: 0;
     width: 14px;
     height: 8px;
-    background: linear-gradient(to right, #eeeeee, #777777, #dddddd);
+    background: linear-gradient(
+        to right,
+        #eeeeee,
+        #777777,
+        #dddddd
+    );
     box-shadow: inset 0 0 2px #555555;
 }
 
-/* Conexão inferior direita */
 .pipe-bottom-right::after {
     content: "";
     position: absolute;
@@ -343,15 +416,21 @@ h1 {
     width: 14px;
     height: 10px;
     border-radius: 0 0 8px 8px;
-    background: linear-gradient(to right, #eeeeee, #777777, #dddddd);
+    background: linear-gradient(
+        to right,
+        #eeeeee,
+        #777777,
+        #dddddd
+    );
     box-shadow: inset 0 0 2px #555555;
 }
 
 /* CÂMARA DA SENHA */
 .chamber {
     position: absolute;
-    left: 100px;
-    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 221px;
     width: 490px;
     height: 58px;
     background: var(--green);
@@ -376,6 +455,7 @@ h1 {
     cursor: pointer;
     position: relative;
     z-index: 2;
+    min-height: 40px;
 }
 
 /* BOTÃO COPIAR */
@@ -426,7 +506,9 @@ h1 {
 }
 
 .chamber.generating {
-    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .08), 0 0 22px rgba(8, 74, 36, .5);
+    box-shadow:
+        inset 0 0 0 2px rgba(255, 255, 255, .08),
+        0 0 22px rgba(8, 74, 36, .5);
 }
 
 /* PARTÍCULAS */
@@ -449,7 +531,7 @@ h1 {
 /* TEXTO VOLTAGEM */
 .status {
     position: absolute;
-    top: 380px;
+    top: 301px;
     left: 0;
     width: 100%;
     text-align: center;
@@ -461,8 +543,9 @@ h1 {
 /* BARRA DE FORÇA */
 .strength {
     position: absolute;
-    left: 160px;
-    top: 403px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 324px;
     width: 345px;
     z-index: 3;
 }
@@ -473,10 +556,21 @@ h1 {
     position: relative;
 }
 
-.segment { flex: 1; }
-.weak { background: #08752e; }
-.medium { background: #fff000; }
-.strong { background: #ff0808; }
+.segment {
+    flex: 1;
+}
+
+.weak {
+    background: #08752e;
+}
+
+.medium {
+    background: #fff000;
+}
+
+.strong {
+    background: #ff0808;
+}
 
 /* INDICADOR DE FORÇA */
 .strength-indicator {
@@ -504,7 +598,7 @@ h1 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 454px;
+    top: 375px;
     border: 2px solid var(--green);
     color: var(--green);
     background: transparent;
@@ -536,6 +630,7 @@ h1 {
     transition: .25s;
     font-size: 14px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .18);
+    z-index: 100;
 }
 
 .toast.show {
@@ -545,8 +640,13 @@ h1 {
 
 /* ANIMAÇÕES */
 @keyframes scan {
-    from { left: 0; }
-    to { left: 100%; }
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100%;
+    }
 }
 
 @keyframes particle {
@@ -554,9 +654,11 @@ h1 {
         opacity: 0;
         transform: translate(0, 0) scale(.5);
     }
+
     30% {
         opacity: .9;
     }
+
     100% {
         opacity: 0;
         transform: translate(var(--dx), var(--dy)) scale(0);
@@ -565,52 +667,139 @@ h1 {
 
 /* RESPONSIVIDADE */
 @media (max-width: 720px) {
-    body { place-items: start center; }
 
-    .lab { padding: 12px 5px; }
+    .lab {
+        padding: 12px 5px 30px;
+    }
 
-    .machine { min-height: 650px; }
+    h1 {
+        margin-bottom: 25px;
+    }
+
+    .machine {
+        min-height: 500px;
+        max-width: 706px;
+    }
 
     .size-box {
         left: 4%;
         width: 30%;
+        top: 20px;
     }
 
     .ingredients-box {
         left: 35%;
         width: 27%;
+        top: 20px;
     }
 
     .ambiguity-box {
+        left: auto;
         right: 4%;
         width: 27%;
+        top: 20px;
     }
 
     .pipe-left {
         left: 30%;
         width: 14%;
+        top: 58px;
     }
 
     .pipe-right {
         left: 62%;
         width: 14%;
+        top: 58px;
     }
 
-    /* Tubos inferiores para telas menores */
-    .pipe-bottom-left { left: 20%; }
-    .pipe-bottom-right { right: 20%; }
+    .pipe-bottom-left {
+        left: 20%;
+        top: 135px;
+    }
+
+    .pipe-bottom-right {
+        left: auto;
+        right: 20%;
+        top: 135px;
+    }
 
     .chamber {
         left: 10%;
+        transform: none;
         width: 80%;
+        top: 221px;
     }
 
-    .password { font-size: clamp(23px, 6vw, 35px); }
+    .password {
+        font-size: clamp(23px, 6vw, 35px);
+    }
 
     .strength {
         left: 20%;
+        transform: none;
         width: 60%;
+        top: 324px;
     }
 
-    .generate-btn { top: 454px; }
+    .generate-btn {
+        top: 375px;
+    }
+}
+
+/* TELAS MUITO PEQUENAS */
+@media (max-width: 430px) {
+
+    .lab {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    .machine {
+        min-height: 520px;
+    }
+
+    .control-box h2 {
+        font-size: 17px;
+    }
+
+    .ingredients-box label {
+        font-size: 12px;
+    }
+
+    .size-box {
+        width: 31%;
+    }
+
+    .ingredients-box {
+        left: 34%;
+        width: 31%;
+    }
+
+    .ambiguity-box {
+        width: 28%;
+    }
+
+    .chamber {
+        width: 92%;
+        left: 4%;
+    }
+
+    .password {
+        padding-left: 12px;
+        font-size: clamp(18px, 6vw, 28px);
+    }
+
+    .copy-btn {
+        width: 58px;
+        margin-right: 4px;
+    }
+
+    .strength {
+        left: 8%;
+        width: 84%;
+    }
 }
